@@ -1,5 +1,7 @@
 package app.budget.domain.budget.service;
 
+import java.text.ParseException;
+
 import app.budget.domain.budget.dto.request.BudgetRequestDto;
 import app.budget.domain.budget.dto.response.BudgetResponseDto;
 
@@ -10,5 +12,5 @@ public interface BudgetService {
 
     public void createBudget(BudgetRequestDto budgetReqDto);
 
-    public void updateBudget(BudgetRequestDto budgetReqDto);
+    public void updateBudget(BudgetRequestDto budgetReqDto) throws ParseException;
 }

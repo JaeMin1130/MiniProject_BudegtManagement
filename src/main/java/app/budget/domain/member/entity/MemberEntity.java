@@ -1,30 +1,36 @@
-package app.budget.domain.budget.entity;
+package app.budget.domain.member.entity;
 
-import app.budget.domain.user.entity.User;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-public class Category {
+@Table(name = "member")
+public class MemberEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id")
-    private Integer id;
+    private int id;
+
+    private String memberId;
+    private String password;
 
     @Enumerated(EnumType.STRING)
-    private CategoryType categoryType;
-    private Integer amount;
-    private Double proportion;
+    private AgeGroup ageGroup;
+
+    @Builder
+    public MemberEntity(String memberId, String password, AgeGroup ageGroup){
+        this.memberId = memberId;
+        this.password = password;
+        this.ageGroup = ageGroup;
+    }
 }
