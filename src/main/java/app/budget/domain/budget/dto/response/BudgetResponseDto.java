@@ -7,12 +7,12 @@ import lombok.Getter;
 
 @Getter
 public class BudgetResponseDto {
-    private Integer totalAmount;
-    private List<CategoryResponseDto> categories;
+    private int totalAmount;
+    private List<CategoryResponseDto> categoryRespDtoList;
 
     @Builder
-    public BudgetResponseDto(int totalAmount, List<CategoryResponseDto> categories) {
+    public BudgetResponseDto(int totalAmount, List<CategoryResponseDto> categoryRespDtoList) {
         this.totalAmount = totalAmount;
-        this.categories = categories;
+        this.categoryRespDtoList = categoryRespDtoList;
     }
 }

@@ -1,4 +1,4 @@
-package app.budget.domain.user.entity;
+package app.budget.domain.member.entity;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

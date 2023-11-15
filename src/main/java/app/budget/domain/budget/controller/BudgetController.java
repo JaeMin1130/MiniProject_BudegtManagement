@@ -1,5 +1,7 @@
 package app.budget.domain.budget.controller;
 
+import java.text.ParseException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,11 +44,13 @@ public class BudgetController {
 
     @PostMapping
     public ResponseEntity<Void> createBudget(@RequestBody BudgetRequestDto budgetReqDto) {
+        budgetService.createBudget(budgetReqDto);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
-
+    
     @PutMapping
-    public ResponseEntity<Void> updateBudget(@RequestBody BudgetRequestDto budgetReqDto) {
+    public ResponseEntity<Void> updateBudget(@RequestBody BudgetRequestDto budgetReqDto) throws ParseException {
+        budgetService.updateBudget(budgetReqDto);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
