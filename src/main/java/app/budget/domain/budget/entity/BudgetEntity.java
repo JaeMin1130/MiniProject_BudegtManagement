@@ -45,7 +45,7 @@ public class BudgetEntity extends BaseTime {
         this.totalAmount = totalAmount;
     }
 
-    public void updateValue(int totalAmount, List<CategoryEntity> categoryEntityList){
+    public void updateBudget(int totalAmount, List<CategoryEntity> categoryEntityList){
         this.totalAmount = totalAmount;
         this.categoryEntityList = categoryEntityList;
     }
