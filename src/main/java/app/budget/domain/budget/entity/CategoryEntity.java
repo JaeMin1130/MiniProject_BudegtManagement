@@ -36,7 +36,8 @@ public class CategoryEntity {
         this.proportion = proportion;
     }
 
-    public void setCategoryId(int id){
-        this.id = id;
+    public void updateCategory(int updatedAmount, double updatedProportion){
+        this.amount = updatedAmount;
+        this.proportion = updatedProportion;
     }
 }
